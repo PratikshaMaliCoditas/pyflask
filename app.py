@@ -5,10 +5,10 @@ app = Flask(__name__)
 
 # Establish a connection to the database
 conn = psycopg2.connect(
-    host="webappflaskdb.postgres.database.azure.com",
-    database="dbname",
-    user="server",
-    password="Vikas@1379375"
+    host="newserverpratiksha.postgres.database.azure.com",
+    database="persons",
+    user="admin01",
+    password="pra@12345678"
 )
 
 # Define a route for the home page
@@ -23,7 +23,7 @@ def home():
         cur = conn.cursor()
 
         # Execute an INSERT query to add a new row to the table
-        cur.execute("INSERT INTO mytable (name, age) VALUES (%s, %s)", (name, age))
+        cur.execute("INSERT INTO customers (name, age) VALUES (%s, %s)", (name, age))
 
         # Commit the changes to the database
         conn.commit()
